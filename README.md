@@ -147,7 +147,8 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- N/A
+- add the logic needed to make the Calculator component work
+- fetch data from an external API to display "quotes" alongside your calculator.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
