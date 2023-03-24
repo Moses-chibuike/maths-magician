@@ -1,6 +1,7 @@
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 import calculate from '../logic/calculate';
+import WordSection from './quote';
 
 const MyCalculator = () => {
   const [calculateData, setCalculateData] = useState({
@@ -54,6 +55,7 @@ const MyCalculator = () => {
           <button type="button" onClick={handleClick} className="operator">=</button>
         </div>
       </div>
+      <WordSection />
     </div>
   );
 };
