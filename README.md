@@ -74,7 +74,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo]()
+- Not deployed yet
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
