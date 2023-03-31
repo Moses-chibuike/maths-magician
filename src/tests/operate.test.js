@@ -1,56 +1,35 @@
-import calculate from '../logic/calculate';
+import operate from '../logic/operate';
 import '@testing-library/jest-dom';
 
-describe('operate function check', () => {
-  test('AC', () => {
-    const obj = {
-      total: '50',
-      next: '2',
-      operation: '+',
-    };
-    const state = calculate(obj, 'AC');
-    expect(state.total).toBe(null);
+describe('operate', () => {
+  test('adds two numbers', () => {
+    expect(operate('3', '4', '+')).toBe('7');
+    expect(operate('-3', '2', '+')).toBe('-1');
   });
 
-  test('number', () => {
-    const obj = {
-      total: '0',
-      next: null,
-      operation: '+',
-    };
-    const state = calculate(obj, '1');
-    expect(state.next).toBe('1');
+  test('subtracts two numbers', () => {
+    expect(operate('7', '5', '-')).toBe('2');
+    expect(operate('10', '15', '-')).toBe('-5');
   });
 
-  test('dot', () => {
-    const obj = {
-      total: '3',
-      next: null,
-      operation: null,
-    };
-    const state = calculate(obj, '.');
-    expect(state.next).toBe('3.');
+  test('multiplies two numbers', () => {
+    expect(operate('2', '3', 'x')).toBe('6');
+    expect(operate('-4', '3', 'x')).toBe('-12');
   });
 
-  test('equal', () => {
-    const obj = {
-      total: '50',
-      next: '2',
-      operation: '+',
-    };
-
-    const state = calculate(obj, '=');
-    expect(state.next).toBe(null);
+  test('divides two numbers', () => {
+    expect(operate('10', '2', '÷')).toBe('5');
+    expect(operate('-12', '4', '÷')).toBe('-3');
+    expect(operate('5', '0', '÷')).toBe("Can't divide by 0.");
   });
 
-  test('+/-', () => {
-    const obj = {
-      total: '50',
-      next: null,
-      operation: null,
-    };
+  test('calculates modulo of two numbers', () => {
+    expect(operate('10', '3', '%')).toBe('1');
+    expect(operate('-12', '5', '%')).toBe('-2');
+    expect(operate('5', '0', '%')).toBe("Can't find modulo as can't divide by 0.");
+  });
 
-    const state = calculate(obj, '+/-');
-    expect(state.total).toBe('-50');
+  test('throws error for unknown operation', () => {
+    expect(() => operate('3', '4', '&')).toThrow("Unknown operation '&'");
   });
 });
