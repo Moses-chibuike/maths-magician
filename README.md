@@ -74,7 +74,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Not deployed yet
+- [live demo](https://maths-magicians-2b65.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
